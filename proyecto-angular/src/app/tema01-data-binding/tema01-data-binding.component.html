@@ -1,0 +1,28 @@
+<h2>Tema 1: Data binding</h2>
+
+<h3>String Interpolation</h3>
+
+<p>Me llamo {{nombre}} {{apellido}}</p>
+<p>Me llamo {{getNombreCompleto()}}</p>
+<p>Me llamo {{nombreCompleto}}</p>
+
+
+<h3>Property Binding</h3>
+
+<img [src]="logoAngular" alt="Logo de Angular" width="100" />
+<img [src]="logo.url" [alt]="altImage" width="100" />
+<img [src]="logo.url" alt="Logo de {{logo.nombre}}" width="100" />
+<!-- <img src="{{logo.url}}" alt="Logo de {{logo.nombre}}" width="100" /> -->
+
+
+<h3>Event Binding</h3>
+
+<button type="button" (click)="changeNumClicks()">Mostrar clicks</button>
+
+<input type="text" (change)="changeNombre($event)">
+
+
+<h3>Two Way Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+
+<input type="text" [value]="nombre" (input)="changeNombre($event)">

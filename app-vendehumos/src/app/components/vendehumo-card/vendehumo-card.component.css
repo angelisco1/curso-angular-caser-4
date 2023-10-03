@@ -1,0 +1,12 @@
+.vendehumo-card {
+  width: 220px;
+  border: 1px solid black;
+}
+
+.vendehumo-card-header > img {
+  width: 100%;
+}
+
+.vendehumo-card-body {
+  padding: 10px;
+}

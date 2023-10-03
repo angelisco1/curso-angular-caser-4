@@ -1,0 +1,31 @@
+.fondoNegro {
+  background-color: black;
+}
+
+.fondoAzul {
+  background-color: blue;
+}
+
+.letraNaranja {
+  color: orange;
+}
+
+.letraBlanca {
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.esPar {
+  background-color: gray;
+}
+
+.esPrimero {
+  border-top: 1px solid black;
+}
+
+.esUltimo {
+  border-bottom: 1px solid black;
+}

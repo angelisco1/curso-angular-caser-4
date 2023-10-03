@@ -1,1 +1,10 @@
-<p>vendehumo-card works!</p>
+<div class="vendehumo-card">
+  <div class="vendehumo-card-header">
+    <img [src]="vendehumo.foto" alt="Imagen de {{vendehumo.nombre}}">
+  </div>
+  <div class="vendehumo-card-body">
+    <h3>{{vendehumo.nombre}}</h3>
+    <p>Categoría: {{vendehumo.categoria}}</p>
+    <button type="button" (click)="votar()">🔼 {{vendehumo.numVotos}}</button>
+  </div>
+</div>

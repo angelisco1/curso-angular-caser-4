@@ -1,0 +1,87 @@
+<h2>Tema 03: Directivas</h2>
+
+<h3>De atributo</h3>
+
+<!-- ngStyle, ngModel -->
+<div>
+  <label for="inputFondoNegro">Aplicar el fondo negro?
+    <input type="checkbox" [(ngModel)]="aplicarFondoNegro">
+  </label>
+
+  <label for="inputLetraNaranja">Aplicar la letra naranja?
+    <input type="checkbox" [(ngModel)]="aplicarLetraNaranja">
+  </label>
+</div>
+
+<p [ngClass]="clases1">El fondo se pinta negro y la letra naranja</p>
+<p [ngClass]="clases2">El fondo se pinta azul y la letra blanca</p>
+
+<p class="fondoAzul">aaaa</p>
+
+<h3>Estructurales</h3>
+
+<!-- <div *ngIf="isLoggedIn">
+  <p>Bienvenido {{usuario}}</p>
+  <button type="button" (click)="logout()">Logout</button>
+</div>
+
+<div *ngIf="!isLoggedIn">
+  <p>Logueate por fa</p>
+  <button type="button" (click)="login()">Login</button>
+</div> -->
+
+<div *ngIf="isLoggedIn; else notLoggedIn">
+  <p>Bienvenido {{usuario}}</p>
+  <button type="button" (click)="logout()">Logout</button>
+</div>
+
+<ng-template #notLoggedIn>
+  <div>
+    <p>Logueate por fa</p>
+    <button type="button" (click)="login()">Login</button>
+  </div>
+</ng-template>
+
+
+<div class="flex">
+  <app-sugus *ngFor="let sugusItem of listaSugus" [sugus]="sugusItem"></app-sugus>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº</th>
+      <th>Contacto</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+      *ngFor="let contactoItem of contactosFiltrados; let par = even; let impar = odd; let primero = first; let ultimo = last; let posicion = index; let totalItems = count"
+      [ngClass]="{esPar: par, esPrimero: primero, esUltimo: ultimo}">
+
+      <td>{{posicion+1}} / {{totalItems}}</td>
+
+      <td>{{contactoItem}}</td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+<div>
+  <label for="mascota">Selecciona que mascota tienes:</label>
+  <select id="mascota" [(ngModel)]="miMascota">
+    <option *ngFor="let mascota of mascotas" [value]="mascota">{{mascota}}</option>
+  </select>
+</div>
+
+<div [ngSwitch]="miMascota">
+  <ng-container *ngFor="let mascota of mascotas">
+    <p *ngSwitchCase="mascota">Tengo un {{mascota}}</p>
+  </ng-container>
+  <!-- <p *ngSwitchCase="'gato'">Tengo un gato</p>
+  <p *ngSwitchCase="'periquito'">Tengo un periquito</p>
+  <p *ngSwitchCase="'canario'">Tengo un canario</p> -->
+  <p *ngSwitchDefault>Tengo otra mascota</p>
+</div>

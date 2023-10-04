@@ -1,0 +1,22 @@
+<h2>Tema 04: Referencias</h2>
+
+<video src="assets/video.mp4" width="250" #videoRef></video>
+
+<div class="controls">
+
+  <ng-container *ngIf="isPaused; else pauseBtn">
+    <button type="button" (click)="playSinParam()">Play (sin parametros)</button>
+    <button type="button" (click)="play(videoRef)">Play</button>
+  </ng-container>
+
+  <!-- <div *ngIf="isPaused; else pauseBtn">
+    <button type="button" (click)="playSinParam()">Play (sin parametros)</button>
+    <button type="button" (click)="play(videoRef)">Play</button>
+  </div> -->
+
+  <ng-template #pauseBtn>
+    <button type="button" (click)="pause(videoRef)">Pause</button>
+  </ng-template>
+
+  <input type="range" min="0" max="100" (input)="changeVolumen($event, videoRef)">
+</div>

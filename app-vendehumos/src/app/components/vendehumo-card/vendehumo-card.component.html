@@ -1,4 +1,4 @@
-<div class="vendehumo-card">
+<div class="vendehumo-card" *ngIf="vendehumo; else loadingData">
   <div class="vendehumo-card-header">
     <img [src]="vendehumo.foto" alt="Imagen de {{vendehumo.nombre}}">
   </div>
@@ -8,3 +8,7 @@
     <button type="button" (click)="votar()">🔼 {{vendehumo.numVotos}}</button>
   </div>
 </div>
+
+<ng-template #loadingData>
+  <p>Loading...</p>
+</ng-template>

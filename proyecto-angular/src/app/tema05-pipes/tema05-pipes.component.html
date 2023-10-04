@@ -1,0 +1,31 @@
+<h2>Tema 05: Pipes</h2>
+
+<div>
+  <h3>{{producto.titulo | titlecase}}</h3>
+  <!-- <h3>{{producto.titulo | uppercase}}</h3>
+  <h3>{{producto.titulo | lowercase}}</h3> -->
+  <p>Precio: {{producto.precio | currency:'EUR'}}</p>
+  <p>Fecha salida: {{producto.fechaSalida | date:'dd/MM/yyyy'}}</p>
+  <p>{{producto.descripcion | slice:0:80 | ellipsis:80}}</p>
+  <!-- <p>{{producto.descripcion | slice:0:80 | ellipsis}}</p> -->
+</div>
+
+<div>
+
+  <div>
+    <label for="mascota">Añadir mascota:</label>
+    <input type="text" id="mascota" (change)="addMascota($event)">
+  </div>
+
+  <div>
+    <label for="filter">Filtrar por:</label>
+    <input type="text" id="filter" (input)="setFiltro($event)">
+  </div>
+
+  <ul>
+    <li *ngFor="let mascotaItem of mascotas | filtrar:filtro">
+      {{mascotaItem | titlecase}}
+    </li>
+  </ul>
+
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Vendehumo } from 'src/app/types/vendehumo.type';
 
 
@@ -9,17 +9,11 @@ import { Vendehumo } from 'src/app/types/vendehumo.type';
 })
 export class VendehumoCardComponent {
 
-  vendehumo: Vendehumo = {
-    id: 'abc',
-    nombre: 'Vendehumo 1',
-    numVotos: 0,
-    categoria: 'crypto',
-    foto: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png',
-  }
+  @Input() vendehumo: Vendehumo | null = null
 
 
   votar() {
-    this.vendehumo.numVotos += 1
+    // this.vendehumo.numVotos += 1
   }
 
 }

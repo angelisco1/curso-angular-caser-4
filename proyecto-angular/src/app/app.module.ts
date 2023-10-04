@@ -7,6 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { Tema02ComunicacionComponentesComponent } from './tema02-comunicacion-componentes/tema02-comunicacion-componentes.component';
 import { SugusComponent } from './tema02-comunicacion-componentes/sugus/sugus.component';
 import { Tema03DirectivasComponent } from './tema03-directivas/tema03-directivas.component';
+import { BlinkDirective } from './tema03-directivas/blink.directive';
+import { ProductoComponent } from './tema02-comunicacion-componentes/producto/producto.component';
+import { Tema04ReferenciasComponent } from './tema04-referencias/tema04-referencias.component';
+import { Tema05PipesComponent } from './tema05-pipes/tema05-pipes.component';
+import { EllipsisPipe } from './tema05-pipes/pipes/ellipsis.pipe';
+import { FiltrarPipe } from './tema05-pipes/pipes/filtrar.pipe';
 
 
 @NgModule({
@@ -16,6 +22,12 @@ import { Tema03DirectivasComponent } from './tema03-directivas/tema03-directivas
     Tema02ComunicacionComponentesComponent,
     SugusComponent,
     Tema03DirectivasComponent,
+    BlinkDirective,
+    ProductoComponent,
+    Tema04ReferenciasComponent,
+    Tema05PipesComponent,
+    EllipsisPipe,
+    FiltrarPipe,
   ],
   imports: [
     BrowserModule,

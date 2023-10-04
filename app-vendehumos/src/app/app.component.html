@@ -1,1 +1,3 @@
-<app-vendehumo-card></app-vendehumo-card>
+<div class="flex">
+  <app-vendehumo-card *ngFor="let vendehumoItem of listaVendehumos" [vendehumo]="vendehumoItem"></app-vendehumo-card>
+</div>

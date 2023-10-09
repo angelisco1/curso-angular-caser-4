@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Vendehumo } from 'src/app/types/vendehumo.type';
 
 
@@ -10,10 +10,12 @@ import { Vendehumo } from 'src/app/types/vendehumo.type';
 export class VendehumoCardComponent {
 
   @Input() vendehumo: Vendehumo | null = null
+  @Output() onVotar = new EventEmitter<string>()
 
 
   votar() {
     // this.vendehumo.numVotos += 1
+    this.onVotar.emit(this.vendehumo?.id)
   }
 
 }

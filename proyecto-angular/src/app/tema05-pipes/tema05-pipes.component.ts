@@ -23,6 +23,12 @@ export class Tema05PipesComponent {
   ]
   filtro: string = ''
 
+  messagePromise = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('El canario está en la jaula...')
+    }, 2500)
+  })
+
   setFiltro(event: Event) {
     this.filtro = (event.target as HTMLInputElement).value
   }

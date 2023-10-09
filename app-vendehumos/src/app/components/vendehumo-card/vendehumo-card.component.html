@@ -4,7 +4,7 @@
   </div>
   <div class="vendehumo-card-body">
     <h3>{{vendehumo.nombre}}</h3>
-    <p>Categoría: {{vendehumo.categoria}}</p>
+    <p>Categoría: {{vendehumo.categoria | titlecase}}</p>
     <button type="button" (click)="votar()">🔼 {{vendehumo.numVotos}}</button>
   </div>
 </div>

@@ -1,0 +1,27 @@
+<h3>Reactivo</h3>
+
+<form [formGroup]="form" (ngSubmit)="registro()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" formControlName="email">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+    <ul *ngIf="passwordErrors">
+      <li *ngIf="passwordErrors['minLength']">Longitud mínima</li>
+      <li *ngIf="passwordErrors['letters']">Le falta alguna letra</li>
+      <li *ngIf="passwordErrors['numbers']">Le falta algún número</li>
+      <li *ngIf="passwordErrors['symbols']">Le falta un . o un -</li>
+    </ul>
+  </div>
+
+  <button type="submit">Registro</button>
+  <button type="submit" [disabled]="form.invalid">Registro</button>
+</form>

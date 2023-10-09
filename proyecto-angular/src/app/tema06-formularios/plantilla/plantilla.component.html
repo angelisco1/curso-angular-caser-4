@@ -1,0 +1,26 @@
+<h3>Plantilla</h3>
+
+<form (ngSubmit)="registro(form)" #form="ngForm">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" [ngModel]="formData.nombre" required>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" [ngModel]="formData.email" required>
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [ngModel]="formData.password" required minlength="7"
+      #inputPw="ngModel">
+    <ul *ngIf="inputPw.errors">
+      <li *ngIf="inputPw.errors['required']">El campo es obligatorio</li>
+      <li *ngIf="inputPw.errors['minlength']">El campo tiene que tener 7 caracteres</li>
+    </ul>
+  </div>
+
+  <button type="submit">Registro</button>
+  <button type="submit" [disabled]="form.invalid">Registro</button>
+</form>

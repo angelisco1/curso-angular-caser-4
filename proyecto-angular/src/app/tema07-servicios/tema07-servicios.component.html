@@ -1,0 +1,15 @@
+<h2>Tema 07: Servicios</h2>
+
+<input type="text" #inputMsg>
+<button type="button" (click)="mostrarMensajeInfo(inputMsg)">Info</button>
+<button type="button" (click)="mostrarMensajeError(inputMsg)">Error</button>
+
+<ng-container *ngIf="userLoggedin; else userNotLoggedin">
+  <p>Bienvenido {{userLoggedin}}</p>
+  <button type="button" (click)="logout()">Logout</button>
+</ng-container>
+
+<ng-template #userNotLoggedin>
+  <p>Logueate</p>
+  <app-form-login></app-form-login>
+</ng-template>

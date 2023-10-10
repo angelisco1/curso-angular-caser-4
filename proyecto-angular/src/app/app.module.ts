@@ -16,6 +16,13 @@ import { FiltrarPipe } from './tema05-pipes/pipes/filtrar.pipe';
 import { Tema06FormulariosComponent } from './tema06-formularios/tema06-formularios.component';
 import { ReactivoComponent } from './tema06-formularios/reactivo/reactivo.component';
 import { PlantillaComponent } from './tema06-formularios/plantilla/plantilla.component';
+import { Tema07ServiciosComponent } from './tema07-servicios/tema07-servicios.component';
+import { FormLoginComponent } from './tema07-servicios/form-login/form-login.component';
+import { LogService } from './tema07-servicios/services/log.service';
+import { Tema08ObservablesComponent } from './tema08-observables/tema08-observables.component';
+import { ContadorComponent } from './tema08-observables/contador/contador.component';
+import { Tema09HttpComponent } from './tema09-http/tema09-http.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -34,11 +41,17 @@ import { PlantillaComponent } from './tema06-formularios/plantilla/plantilla.com
     Tema06FormulariosComponent,
     ReactivoComponent,
     PlantillaComponent,
+    Tema07ServiciosComponent,
+    FormLoginComponent,
+    Tema08ObservablesComponent,
+    ContadorComponent,
+    Tema09HttpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

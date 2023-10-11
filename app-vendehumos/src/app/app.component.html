@@ -1,16 +1,4 @@
-<div class="flex">
-  <app-vendehumo-card *ngFor="let vendehumoItem of listaVendehumos" [vendehumo]="vendehumoItem"
-    (onVotar)="votarVendehumo($event)"></app-vendehumo-card>
-</div>
+<h1>Vendehumos</h1>
+<app-menu></app-menu>
 
-<div>
-  <div class="flex">
-    <button type="button" *ngFor="let categoria of categorias" (click)="setCategoriaSeleccionada(categoria)">{{categoria
-      | titlecase}}</button>
-  </div>
-
-  <div class="flex">
-    <app-vendehumo-card *ngFor="let vendehumoItem of vendehumosFiltradosPorCategoriaSeleccionada"
-      [vendehumo]="vendehumoItem" (onVotar)="votarVendehumo($event)"></app-vendehumo-card>
-  </div>
-</div>
+<router-outlet></router-outlet>

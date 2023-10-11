@@ -6,6 +6,7 @@
     <h3>{{vendehumo.nombre}}</h3>
     <p>Categoría: {{vendehumo.categoria | titlecase}}</p>
     <button type="button" (click)="votar()">🔼 {{vendehumo.numVotos}}</button>
+    <a [routerLink]="['/vendehumos', vendehumo.id]">Editar</a>
   </div>
 </div>
 

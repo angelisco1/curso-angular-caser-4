@@ -12,5 +12,15 @@
   <li *ngFor="let drink of cocktails">
     <img [src]="drink.strDrinkThumb" [alt]="drink.strDrink" width="100">
     <span>{{drink.strDrink}}</span>
+    <button type="button" (click)="guardar(drink)">Guardar como favorito</button>
+  </li>
+</ul>
+
+<h3>Favourite cocktails</h3>
+<ul>
+  <li *ngFor="let drink of favCocktails">
+    <img [src]="drink.strDrinkThumb" [alt]="drink.strDrink" width="100">
+    <span>{{drink.strDrink}}</span>
+    <button type="button" (click)="eliminar(drink)">Eliminar de mis favorito</button>
   </li>
 </ul>

@@ -10,12 +10,14 @@ import { Vendehumo } from 'src/app/types/vendehumo.type';
 export class VendehumoCardComponent {
 
   @Input() vendehumo: Vendehumo | null = null
-  @Output() onVotar = new EventEmitter<string>()
+  @Output() onVotar = new EventEmitter<Vendehumo>()
 
 
   votar() {
     // this.vendehumo.numVotos += 1
-    this.onVotar.emit(this.vendehumo?.id)
+    if (this.vendehumo) {
+      this.onVotar.emit(this.vendehumo)
+    }
   }
 
 }

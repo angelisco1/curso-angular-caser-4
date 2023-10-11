@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="guardar()">
+
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+  </div>
+
+  <div>
+    <label for="categoria">Categoria:</label>
+    <select id="categoria" formControlName="categoria">
+      <option value="crypto">crypto</option>
+      <option value="trading">trading</option>
+      <option value="dropshipping">dropshipping</option>
+      <option value="education">education</option>
+      <option value="other">other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="foto">URL de la foto:</label>
+    <input type="text" id="foto" formControlName="foto">
+  </div>
+
+  <button type="submit">Guardar</button>
+</form>
